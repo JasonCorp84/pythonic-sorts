@@ -28,7 +28,7 @@ def test(input1, input2, input3, expected_output):
     end = time.time()
     timeout = 1.00
     if (end - start) < timeout:
-        print(f"test completed in less than {timeout * 1000} milliseconds!")
+        print(f"test completed in less than {timeout * 1000} milliseconds! ({end - start}ms)")
         if result == expected_output:
             print(f"Actual: {result}")
             print("Pass")

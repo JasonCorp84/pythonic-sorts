@@ -1,4 +1,6 @@
 def quick_sort(nums, low, high):
+  if len(nums) <= 1:
+    return
   if low < high:
     i = partition(nums, low, high)
     quick_sort(nums, low, i - 1)
