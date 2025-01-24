@@ -1,10 +1,12 @@
 def power_set(input_set):
   if len(input_set) == 0:
-    print("set is empty:", input_set)
-    return input_set
-
-
-x = set()
-print("xXx", x)
-
-power_set(x)
+    return [[]]
+  
+  subsets = []
+  first = input_set[0]
+  remaining = input_set[1:]
+  remaining_subsets = power_set(remaining)
+  for subset in remaining_subsets:
+    subsets.append([first] + subset)
+    subsets.append(subset)
+  return subsets
